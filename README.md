@@ -8,7 +8,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
-yay -S python312 hyprshot onlyoffice-bin pcl wlogout
+yay -S hyprshot onlyoffice-bin wlogout
 
 ```
 
