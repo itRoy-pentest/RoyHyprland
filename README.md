@@ -28,7 +28,7 @@ git clone https://github.com/RoyProgramming/hyprlandConfig.git
 **Copy config**
 
 ```
-cd hyprlandSettings
+cd hyprlandConfig
 cp -r kitty waybar wlogout wofi hypr ~/.config
 
 cd Graphite-gtk-theme
