@@ -19,8 +19,8 @@ yay -S hyprshot onlyoffice-bin wlogout
 ```
 cd Documents
 
-git clone git@github.com:vinceliuice/Graphite-gtk-theme.git
-git clone git@github.com:RoyProgramming/hyprlandConfig.git
+git clone https://github.com/vinceliuice/Graphite-gtk-theme.git
+git clone https://github.com/RoyProgramming/hyprlandConfig.git
 ```
 
 # Step 4
