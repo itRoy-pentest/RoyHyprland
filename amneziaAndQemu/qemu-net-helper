@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Проверка прав root
+if [ "$(id -u)" != "0" ]; then
+    echo "Запустите скрипт с правами root: sudo $0"
+    exit 1
+fi
+
+case "$1" in
+    start)
+        echo "🔧 Запускаем сеть для QEMU..."
+        systemctl start libvirtd
+        virsh net-start default
+        echo "✅ Сеть для QEMU запущена"
+        ;;
+    stop)
+        echo "🛑 Останавливаем сеть QEMU..."
+        virsh net-destroy default
+        echo "✅ Сеть QEMU остановлена"
+        ;;
+    *)
+        echo "Использование: sudo $0 {start|stop}"
+        exit 1
+esac

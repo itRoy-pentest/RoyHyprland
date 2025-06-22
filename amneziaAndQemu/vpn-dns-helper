@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Проверка прав root
+if [ "$(id -u)" != "0" ]; then
+    echo "Запустите скрипт с правами root: sudo $0"
+    exit 1
+fi
+
+case "$1" in
+    fix)
+        echo "🛠️ Настраиваем DNS для VPN..."
+        # Отключаем управление DNS в NetworkManager
+        if ! grep -q '^dns=none' /etc/NetworkManager/NetworkManager.conf; then
+            echo -e "\n[main]\ndns=none" >> /etc/NetworkManager/NetworkManager.conf
+        fi
+        
+        # Применяем Cloudflare DNS
+        echo -e "nameserver 1.1.1.1\nnameserver 1.0.0.1" > /etc/resolv.conf
+        systemctl restart NetworkManager
+        echo "✅ DNS настроены для работы с VPN"
+        ;;
+    restore)
+        echo "🔄 Восстанавливаем стандартные DNS..."
+        # Убираем настройку dns=none
+        sed -i '/^dns=none$/d' /etc/NetworkManager/NetworkManager.conf
+        sed -i '/^\[main\]$/d' /etc/NetworkManager/NetworkManager.conf
+        systemctl restart NetworkManager
+        echo "✅ Стандартные DNS восстановлены"
+        ;;
+    *)
+        echo "Использование: sudo $0 {fix|restore}"
+        exit 1
+        ;;
+esac
