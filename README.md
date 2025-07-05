@@ -18,7 +18,7 @@ yay -S hyprshot wlogout
 cd Documents
 
 git clone https://github.com/vinceliuice/Graphite-gtk-theme.git
-git clone https://github.com/RoyProgramming/hyprlandConfig.git
+git clone https://github.com/itRoy-pentest/RoyHyprland.git
 ```
 
 # Step 4
@@ -26,7 +26,7 @@ git clone https://github.com/RoyProgramming/hyprlandConfig.git
 **Copy config**
 
 ```
-cd hyprlandConfig
+cd RoyHyprland
 cp -r kitty waybar wlogout wofi hypr ~/.config
 
 cd Graphite-gtk-theme
