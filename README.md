@@ -1,6 +1,6 @@
 # Step 1
 ```
-sudo pacman -S wofi kitty freetype2 zsh git hyprlock hyprpaper waybar ttf-font-awesome otf-font-awesome ttf-jetbrains-mono obsidian pavucontrol feh ranger thunar meson nwg-look papirus-icon-theme fastfetch file powerline-fonts inetutils ttf-font-awesome otf-font-awesome ttf-jetbrains-mono neovim code ttf-dejavu bluez bluez-utils blueman telegram-desktop vlc
+sudo pacman -S wofi kitty freetype2 zsh git hyprlock hyprpaper waybar ttf-font-awesome otf-font-awesome ttf-jetbrains-mono obsidian pavucontrol feh ranger thunar meson nwg-look papirus-icon-theme fastfetch file powerline-fonts inetutils ttf-font-awesome otf-font-awesome ttf-jetbrains-mono neovim code ttf-dejavu bluez bluez-utils blueman telegram-desktop vlc fastfetch
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -27,7 +27,7 @@ git clone https://github.com/itRoy-pentest/RoyHyprland.git
 
 ```
 cd RoyHyprland
-cp -r kitty waybar wlogout wofi hypr ~/.config
+cp -r kitty waybar wlogout wofi hypr fastfetch ~/.config
 
 cd Graphite-gtk-theme
 ./install.sh
